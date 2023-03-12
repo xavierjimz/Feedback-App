@@ -1,9 +1,9 @@
-import React from 'react'
+
 
 function FeedbackStats( {feedback} ) {
   return (
     <div className='review-display'>
-      <h4>{FeedbackStats.length} Reviews</h4>
+      <h4>{feedback.length} Reviews</h4>
     </div>
   )
 }

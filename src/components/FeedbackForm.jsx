@@ -10,6 +10,13 @@ function FeedbackForm( {onSubmit} ) {
   //handle the submitting of the form
     const handleSubmit = (event) => {
         event.preventDefault();//prevent browser from reloading
+
+        //if the user doesn't enter a name or a feedback, don't submit
+        if(!name || !feedback) {
+          {/*Add a modal to request user to input both fields*/}
+          alert("Please enter both a name and feedback.");
+          return;
+        }
         //on that submit(get the name and the feedback)
         onSubmit(name, feedback);
         //set the feedback
@@ -35,7 +42,7 @@ function FeedbackForm( {onSubmit} ) {
           placeholder="Feedback..." 
           onChange={(event) => setFeedback(event.target.value)} 
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit-btn">Submit</button>
     </form>
   )
 }
